@@ -1,0 +1,45 @@
+Ne html kam krijuar nje div container i cili mban div-in slider ku jane fotot, dy butona per te kaluar majtas djthathas,
+ nje buton per upload dhe divin per pagination bullets.
+
+ CSS: Kam stilizuar edhe pozicinuar elementet. Per pjesen e pozicionimit kam perdorur 
+ diplay flex dhe position:relative dhe position:absolute. Duke perdorur position:relative tek nje div prind, 
+ une duke u dhene femijeve te tij position:absoulute mund ti pozicionoj me left right top bottom keta femije ne lidhje me divin prind.
+ Per butonat jam kujdesur te kem stilizime kur ata afishihen, por edhe kur behen hover apo klikohen 
+ duke perodurur pseudoklasat :hover dhe :active.
+ Gjithashtu ne css kam krijuar edhe klasen .pagination-dot e cila do me sherbeje ne js
+kur te krijoj dots per secilin imazh nepermjet kesaj klase une mund ti stilizoj ato dots qe do i krijoj
+dinamikisht dhe me .pagination-dot.active une mund te vecoj stilin e dot-it active.
+
+JS:Fillimisht kam aksesuar elementet e html ne js duke perdorur getELementById() apo querySelector()
+apo querySelectorAll() ne rastin e imazheve per ti aksesuar te gjitha imazhet ne nje nodelist.
+
+Per te levizur majtas apo djathtas kam krijuar 2 metoda goPrev dhe goNext qe bejne te mundur inkrementin appo dekrementin e index
+dhe kam menduar qe imazhet ti afishoj si cikel, pra nese kam arritur ne fund te imazheve duke klikuar Next nese e klikoj perseri
+une shkoj tek imazhi i pare.
+Keto dy metoda i vendos per te menazhuar eventet click te butonave LEftBtn dhe RightBtn. Per te afishuar imazhet une therras updateDisplay() tek goPrev() dhe goNext()
+Funksionin updateDisplay() e kam krijuar per te shfaqur ne slider ate imazh qe ndodhet ne indeksin === me index,
+ku index fillimisht e kam inicializur 0 dhe ky funksion vendos si active dot vendos dot-in e imazhit ne indeks===index.
+
+
+Kam krijuar funksionin createPaginationDots() i cili fillimisht ben innerHtml e tij bosh 
+dhe per secilin imazh krijoj nje div qe une i vendos klasen .pagination-dot
+nese ky dot klikohet index merr vleren e ketij imazhi. Therras updateDisplay() ne menyre qe imazhi i ri te me shfaqet dhe dot korrespondues
+i tij te jete active tani. Keto dive (dot) qe krijova i bej append tek containeri i tyre.
+
+Dicka qe me duhej te merrja parasysh ishte shtimi i nje foto te re. Kur kjo foto e re shtohet pervec se duhet ta shtoj tek slideri
+me duhet te shtoj edhe nje dot te ri qe te perfaqesoje ate imazh te ri. Prandaj pasi shtoj nje imazhi me upload une kam krijuar 
+funskionin updateImgs() per te marre fotot e reja te sliderit, ne menyre qe tani te bazohem tek keto foto per te krijuar dots.
+
+Jam kujdesur qe te mund te shtoj edhe imazhe te tjera krahas atyre
+qe kam shtuar ne menyre statike. Vendos addEventListener per input type file
+dhe kur ndodh eventi change, une selektoj filet dhe per secilin prej tyre krijoj objektin
+FileReader() dhe lexoj filen si url nepermjet metodes readAsDataURL()
+onload une marr url-ne dhe krijoj imazh me src si url qe mora. dhe kete imazh e shtoj tek slideri.
+Ne momentin qe klikoj uploadButton hapet dritarja per te selektuar filet.
+Pasi imazhin e krijuar e shtoj ne slider, une duhet te updatoj edhe pamjen
+pra ky imazh duhet te shfaqet ne slider dhe te krijoj nje dot te ri qe te perfaqesoje kete imazh.
+Prandaj ketu kam thirrur edhe metodat updateImgs();
+                                      createPaginationDots();
+                                      updateDisplay();
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Slider</title>
+    <link rel="stylesheet" href="slider.css" />
+  </head>
+  <body>
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <img src="pexels2.jpg" alt="Photo 2" />
+        <img src="pexels3.jpeg" alt="Photo 3" />
+        <img src="pexels4.jpeg" alt="Photo 3" />
+        <img src="pexels5.webp" alt="Photo 3" />
+        <img src="pexels6.jpeg" alt="Photo 3" />
+      </div>
+      <button id="prev" class="nav-button">Prev</button>
+      <button id="next" class="nav-button">Next</button>
+
+      <input type="file" id="fileInput" multiple />
+      <button id="uploadButton">Upload Images</button>
+
+      <div id="pagination" class="pagination"></div>
+    </div>
+
+    <script src="slider.js"></script>
+  </body>
+</html>

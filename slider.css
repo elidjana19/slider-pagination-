@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(202, 202, 202, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 16px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #a3a069;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+#fileInput {
+  display: none;
+}
+
+#uploadButton {
+  cursor: pointer;
+  padding: 12px 24px;
+  background-color: #a3a069;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 20px auto;
+  display: block;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#uploadButton:hover {
+  background-color: #dbc983;
+  transform: translateY(-2px);
+}
+
+#uploadButton:active {
+  background-color: #cfc081;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background-color: #333;
+  transform: scale(1.4);
+}
